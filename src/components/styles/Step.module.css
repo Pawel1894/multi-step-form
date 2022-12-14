@@ -1,0 +1,36 @@
+.step {
+  padding-inline: 2rem;
+  padding-block: 1rem;
+}
+
+.step-indicator {
+  color: hsl(var(--clr-neutral-400));
+  font-weight: var(--fw-bold);
+  border: 2px solid hsl(var(--clr-neutral-400));
+  border-radius: 100%;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.step-indicator.active {
+  background-color: hsl(var(--clr-primary-300));
+  color: hsl(var(--clr-primary-100));
+  border: unset;
+}
+
+.infos {
+  margin-left: 0.75rem;
+}
+
+.step-number {
+  color: hsla(var(--clr-neutral-200));
+  font-size: 0.8rem;
+  font-weight: var(--fw-semi-bold);  
+}
+
+.label {
+  color: hsl(var(--clr-neutral-400));  
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;  
+  line-height: 1.3;
+}

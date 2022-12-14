@@ -1,0 +1,12 @@
+.container {
+  display: grid;    
+}
+
+.container > * {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.container > div:first-of-type {
+  margin-top: 1rem;
+}

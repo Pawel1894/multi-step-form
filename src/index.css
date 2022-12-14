@@ -87,3 +87,39 @@ svg {
   --fw-semi-bold: 500;
   --fw-bold: 700;  
 }
+
+html {
+  font-family: var(--ff-primary);
+}
+
+body {  
+  background-color: hsl(var(--clr-neutral-300));
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-dir-col {
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding-inline: 1rem;
+}
