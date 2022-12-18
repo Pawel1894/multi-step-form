@@ -1,0 +1,34 @@
+.default {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  background-color: hsl(var(--clr-primary-100));
+  color: hsl(var(--clr-neutral-300));
+  padding: 0.6rem 1rem;
+  font-weight: var(--fw-semi-bold);
+  font-size: 1.1rem;
+}
+.default:hover,
+.default:focus {
+  background-color: hsla(var(--clr-primary-100) / 0.8);
+}
+
+.default:disabled {
+  cursor: initial;
+  background-color: gray;
+}
+
+.text {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: hsl(var(--clr-neutral-100));
+  font-size: 1.1rem;
+}
+
+.text:hover,
+.text:focus {
+  color: hsla(var(--clr-primary-100));
+}
