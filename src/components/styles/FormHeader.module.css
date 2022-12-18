@@ -7,5 +7,6 @@
 }
 
 .description {
+  font-size: 1.2rem;
   color: hsl(var(--clr-neutral-100));
 }

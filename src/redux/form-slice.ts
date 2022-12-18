@@ -1,13 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { PersonalInfoProperty } from "../types";
-
-interface IInput {
-  value: string;
-  isInvalid: boolean;
-  isChanged: boolean;
-  errorMsg: string;
-}
+import { PersonalInfoProperty, TPlan } from "../types";
+import { IInput } from "../interface";
 
 interface IUpdatePersonalInfo {
   property: PersonalInfoProperty;
@@ -24,6 +18,7 @@ interface IPersonalInfo {
 
 interface IForm {
   personalInfo: IPersonalInfo;
+  plan: TPlan;
 }
 
 const initialState: IForm = {
@@ -47,6 +42,10 @@ const initialState: IForm = {
       errorMsg: "",
     },
   },
+  plan: {
+    category: "arcade",
+    isMonthly: true,
+  },
 };
 
 export const formSlice = createSlice({
@@ -58,6 +57,12 @@ export const formSlice = createSlice({
       state.personalInfo[action.payload.property].isInvalid = action.payload.isInvalid;
       state.personalInfo[action.payload.property].errorMsg = action.payload.errorMsg;
       state.personalInfo[action.payload.property].isChanged = true;
+    },
+    setPlanCategory: (state, action) => {
+      state.plan.category = action.payload;
+    },
+    setPlanIsMonthly: (state, action) => {
+      state.plan.isMonthly = action.payload;
     },
   },
 });

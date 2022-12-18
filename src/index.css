@@ -111,8 +111,18 @@ body {
   justify-content: center;
 }
 
+.flex-center-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .flex-dir-col {
   flex-direction: column;
+}
+
+.gap-1 {
+  gap: 1rem;
 }
 
 .margin-inline-auto {

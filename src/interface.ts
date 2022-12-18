@@ -1,5 +1,6 @@
-export interface IPersonalInfo {
-  name: string;
-  email: string;
-  phone: string;
+export interface IInput {
+  value: string;
+  isInvalid: boolean;
+  isChanged: boolean;
+  errorMsg: string;
 }
