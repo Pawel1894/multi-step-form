@@ -34,6 +34,8 @@ export default function Buttons({ step, setStep }: Props) {
       case 1:
         if (isStep1Valid()) setStep((prev) => prev + 1);
         return;
+      case 2:
+        setStep((prev) => prev + 1);
 
       default:
         return;

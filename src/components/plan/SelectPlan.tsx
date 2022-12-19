@@ -1,4 +1,4 @@
-import FormHeader from "./FormHeader";
+import FormHeader from "../FormHeader";
 import PlanButtons from "./PlanButtons";
 import PlanToggle from "./PlanToggle";
 import styles from "./styles/SelectedPlan.module.css";

@@ -2,9 +2,9 @@ import React from "react";
 import arcade from "../assets/images/icon-arcade.svg";
 import advanced from "../assets/images/icon-advanced.svg";
 import pro from "../assets/images/icon-pro.svg";
-import { useAppSelector } from "../hooks/useAppSelector";
+import { useAppSelector } from "../../hooks/useAppSelector";
 import { useDispatch } from "react-redux";
-import { actionForm } from "../redux/form-slice";
+import { actionForm } from "../../redux/form-slice";
 import PlanBtn from "./PlanBtn";
 
 export default function PlanButtons() {

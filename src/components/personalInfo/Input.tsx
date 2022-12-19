@@ -1,7 +1,7 @@
 import React, { HTMLInputTypeAttribute } from "react";
-import { PersonalInfoProperty } from "../types";
+import { PersonalInfoProperty } from "../../types";
 import styles from "./styles/Input.module.css";
-import { useAppSelector } from "../hooks/useAppSelector";
+import { useAppSelector } from "../../hooks/useAppSelector";
 
 type Props = {
   label: string;

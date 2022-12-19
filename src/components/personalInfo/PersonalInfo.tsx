@@ -1,11 +1,11 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { ERRORS } from "../enums";
-import { PersonalInfoProperty } from "../types";
-import { actionForm } from "../redux/form-slice";
-import FormHeader from "./FormHeader";
+import { ERRORS } from "../../enums";
+import { PersonalInfoProperty } from "../../types";
+import { actionForm } from "../../redux/form-slice";
+import FormHeader from "../FormHeader";
 import Input from "./Input";
-import { containsNumbers, isValidEmail, isValidTel } from "../helpers/helpers";
+import { containsNumbers, isValidEmail, isValidTel } from "../../helpers/helpers";
 
 function isPersonalInfoProperty(value: string): value is PersonalInfoProperty {
   return ["name", "phone", "email"].includes(value);

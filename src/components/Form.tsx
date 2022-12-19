@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Buttons from "./Buttons";
-import PersonalInfo from "./PersonalInfo";
-import SelectPlan from "./SelectPlan";
+import PersonalInfo from "./personalInfo/PersonalInfo";
+import PickAddons from "./addons/PickAddons";
+import SelectPlan from "./plan/SelectPlan";
 import Steps from "./Steps";
 import styles from "./styles/Form.module.css";
 
@@ -14,6 +15,8 @@ export default function Form() {
         return <PersonalInfo />;
       case 2:
         return <SelectPlan />;
+      case 3:
+        return <PickAddons />;
 
       default:
         return null;

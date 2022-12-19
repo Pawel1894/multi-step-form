@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { useAppSelector } from "../hooks/useAppSelector";
-import { actionForm } from "../redux/form-slice";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { actionForm } from "../../redux/form-slice";
 import styles from "./styles/PlanToggle.module.css";
 
 type Props = {};

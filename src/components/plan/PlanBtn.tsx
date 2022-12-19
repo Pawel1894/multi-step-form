@@ -1,5 +1,5 @@
 import React from "react";
-import { TPlan } from "../types";
+import { TPlan } from "../../types";
 import styles from "./styles/PlanBtn.module.css";
 
 type Props = {
