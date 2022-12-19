@@ -1,13 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { PersonalInfoProperty, TPlan } from "../types";
-import { IInput } from "../interface";
+import { TAddon, TPersonalInfoProperty, TPlan } from "../types";
+import { IAddon, IInput } from "../interface";
 
 interface IUpdatePersonalInfo {
-  property: PersonalInfoProperty;
+  property: TPersonalInfoProperty;
   value: string;
   isInvalid: boolean;
   errorMsg: string;
+}
+
+interface IUpdateAddon {
+  property: TAddon;
 }
 
 interface IPersonalInfo {
@@ -19,6 +23,7 @@ interface IPersonalInfo {
 interface IForm {
   personalInfo: IPersonalInfo;
   plan: TPlan;
+  addon: IAddon;
 }
 
 const initialState: IForm = {
@@ -46,6 +51,11 @@ const initialState: IForm = {
     category: "arcade",
     isMonthly: true,
   },
+  addon: {
+    online: false,
+    profile: false,
+    storage: false,
+  },
 };
 
 export const formSlice = createSlice({
@@ -63,6 +73,9 @@ export const formSlice = createSlice({
     },
     setPlanIsMonthly: (state, action) => {
       state.plan.isMonthly = action.payload;
+    },
+    toggleAddon: (state, action: PayloadAction<IUpdateAddon>) => {
+      state.addon[action.payload.property] = !state.addon[action.payload.property];
     },
   },
 });

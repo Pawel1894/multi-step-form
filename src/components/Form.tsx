@@ -7,7 +7,7 @@ import Steps from "./Steps";
 import styles from "./styles/Form.module.css";
 
 export default function Form() {
-  const [step, setStep] = useState<number>(1);
+  const [step, setStep] = useState<number>(3);
 
   function renderContent() {
     switch (step) {

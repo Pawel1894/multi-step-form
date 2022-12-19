@@ -13,7 +13,9 @@ type Props = {
 };
 
 export default function Input({ label, isRequired, property, onChangeHandler, placeholder }: Props) {
-  const { value, isInvalid, isChanged, errorMsg } = useAppSelector((state) => state.form.personalInfo[property]);
+  const { value, isInvalid, isChanged, errorMsg } = useAppSelector(
+    (state) => state.form.personalInfo[property]
+  );
 
   return (
     <div className="relative">

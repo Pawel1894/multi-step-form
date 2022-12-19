@@ -4,3 +4,9 @@ export interface IInput {
   isChanged: boolean;
   errorMsg: string;
 }
+
+export interface IAddon {
+  online: boolean;
+  storage: boolean;
+  profile: boolean;
+}

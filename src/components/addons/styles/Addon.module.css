@@ -1,0 +1,76 @@
+.container {
+  width: 100%;
+  border: 1px solid hsl(var(--clr-neutral-200));
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.container:hover,
+.container.active {
+  border-color: hsl(var(--clr-primary-200));
+  background-color: hsl(var(--clr-neutral-300));
+}
+
+.title {
+  font-weight: var(--fw-semi-bold);
+  color: hsl(var(--clr-primary-100));
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.description {
+  color: hsl(var(--clr-neutral-100));
+}
+
+.cost {
+  color: hsl(var(--clr-primary-200));
+}
+
+.checkmark-container {
+  display: block;
+  position: relative;
+  height: 25px;
+  width: 25px;
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  border: 2px solid hsl(var(--clr-neutral-200));
+  border-radius: 0.4rem;
+}
+
+input:checked ~ .checkmark {
+  background-color: hsl(var(--clr-primary-200));
+  border-color: hsl(var(--clr-primary-200));
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+input:checked ~ .checkmark:after {
+  display: block;
+}

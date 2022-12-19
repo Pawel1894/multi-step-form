@@ -129,8 +129,16 @@ body {
   margin-inline: auto;
 }
 
+.margin-left-auto {
+  margin-left: auto;
+}
+
 .margin-top-2 {
   margin-top: 2rem;
+}
+
+.margin-left-1_5 {
+  margin-left: 1.5rem;
 }
 
 .relative {
