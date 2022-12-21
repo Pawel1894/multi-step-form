@@ -1,0 +1,14 @@
+.container {
+  padding-inline: 1rem;
+}
+
+.label {
+  color: hsl(var(--clr-neutral-100));
+  font-size: 0.95rem;
+}
+
+.cost {
+  font-size: 1.2rem;
+  color: hsl(var(--clr-primary-200));
+  font-weight: var(--fw-semi-bold);
+}

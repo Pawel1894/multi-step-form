@@ -1,4 +1,5 @@
-.default {
+.default,
+.primary {
   border: none;
   outline: none;
   cursor: pointer;
@@ -12,6 +13,15 @@
 .default:hover,
 .default:focus {
   background-color: hsla(var(--clr-primary-100) / 0.8);
+}
+
+.primary {
+  background-color: hsl(var(--clr-primary-200));
+}
+
+.primary:hover,
+.primary:focus {
+  background-color: hsla(var(--clr-primary-200) / 0.8);
 }
 
 .default:disabled {
@@ -31,4 +41,19 @@
 .text:hover,
 .text:focus {
   color: hsla(var(--clr-primary-100));
+}
+
+.link {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  text-align: left;
+  padding: 0;
+  color: hsl(var(--clr-neutral-100));
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: hsl(var(--clr-primary-200));
 }

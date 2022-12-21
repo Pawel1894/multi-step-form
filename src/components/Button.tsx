@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./styles/Button.module.css";
 
 type Props = {
-  styleMode: "text" | "default";
+  styleMode: "text" | "default" | "link" | "primary";
   text: string;
   btnAttributes?: React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 };

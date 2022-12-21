@@ -1,4 +1,5 @@
-import { TCost } from "../types";
+import { IAddon, ICosts } from "../interface";
+import { TAddon, TCost, TPlan } from "../types";
 
 export function containsNumbers(str: string) {
   return /\d/.test(str);
@@ -18,4 +19,24 @@ export function isValidTel(str: string) {
 
 export function formatCost(cost: number, type: TCost) {
   return `$${cost}/${type === "yearly" ? "yr" : "mo"}`;
+}
+
+export function getSelectedPlanCost(costs: ICosts, plan: TPlan) {
+  if (plan.isMonthly) return costs.plan[plan.category].month;
+
+  return costs.plan[plan.category].year;
+}
+
+export function getSelectedAddonsCost(costs: ICosts, addons: IAddon, isMonthly: boolean) {
+  let totalCost = 0;
+
+  for (const iterator of Object.entries(addons)) {
+    if (iterator[1].isActive) {
+      totalCost += isMonthly
+        ? costs.addon[iterator[0] as TAddon].month
+        : costs.addon[iterator[0] as TAddon].year;
+    }
+  }
+
+  return totalCost;
 }

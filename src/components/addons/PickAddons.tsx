@@ -5,8 +5,9 @@ import Addon from "./Addon";
 
 export default function PickAddons() {
   const isMonthly = useAppSelector((state) => state.form.plan.isMonthly);
+  const addons = useAppSelector((state) => state.form.addon);
   return (
-    <form className="form-flow margin-top-2">
+    <div className="flow margin-top-2">
       <FormHeader title="Pick add-ons" description="Add-ons help enhance your gaming experience." />
       <Addon
         property="online"
@@ -15,6 +16,7 @@ export default function PickAddons() {
         monthlyCost={1}
         yearlyCost={10}
         isMonthly={isMonthly}
+        isActive={addons.online.isActive}
       />
       <Addon
         property="storage"
@@ -23,6 +25,7 @@ export default function PickAddons() {
         monthlyCost={2}
         yearlyCost={20}
         isMonthly={isMonthly}
+        isActive={addons.storage.isActive}
       />
       <Addon
         property="profile"
@@ -31,7 +34,8 @@ export default function PickAddons() {
         monthlyCost={2}
         yearlyCost={20}
         isMonthly={isMonthly}
+        isActive={addons.profile.isActive}
       />
-    </form>
+    </div>
   );
 }

@@ -12,9 +12,18 @@ type Props = {
   monthlyCost: number;
   yearlyCost: number;
   isMonthly: boolean;
+  isActive: boolean;
 };
 
-export default function Addon({ title, description, monthlyCost, yearlyCost, property, isMonthly }: Props) {
+export default function Addon({
+  title,
+  description,
+  monthlyCost,
+  yearlyCost,
+  property,
+  isMonthly,
+  isActive,
+}: Props) {
   const checkboxRef = useRef<HTMLInputElement>(null);
   const dispatch = useAppDispatch();
   function toggleAddon() {
@@ -26,7 +35,7 @@ export default function Addon({ title, description, monthlyCost, yearlyCost, pro
   return (
     <label className={`${styles["container"]} flex-center`}>
       <div className={`${styles["checkmark-container"]}`}>
-        <input ref={checkboxRef} type="checkbox" onChange={toggleAddon} />
+        <input checked={isActive} ref={checkboxRef} type="checkbox" onChange={toggleAddon} />
         <span className={`${styles["checkmark"]}`}></span>
       </div>
       <div className="flex flex-dir-col margin-left-1_5">
@@ -39,5 +48,3 @@ export default function Addon({ title, description, monthlyCost, yearlyCost, pro
     </label>
   );
 }
-
-// TODO: ADD OBJECT OF COSTS TO SLICE

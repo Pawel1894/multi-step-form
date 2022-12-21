@@ -1,0 +1,7 @@
+.category,
+.cost {
+  color: hsl(var(--clr-primary-100));
+  font-weight: var(--fw-semi-bold);
+  text-transform: capitalize;
+  font-size: 1.1rem;
+}

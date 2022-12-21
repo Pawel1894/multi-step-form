@@ -117,7 +117,7 @@ export default function PersonalInfo() {
   }
 
   return (
-    <form className="form-flow margin-top-2">
+    <div className="flow margin-top-2">
       <FormHeader
         title="Personal info"
         description="Please provide your name, email address, and phone number."
@@ -146,6 +146,6 @@ export default function PersonalInfo() {
         placeholder="e.g. +1 234 567 890"
         onChangeHandler={updateValue}
       />
-    </form>
+    </div>
   );
 }

@@ -12,7 +12,8 @@ export default function Buttons({ step, setStep }: Props) {
   const personalInfo = useAppSelector((state) => state.form.personalInfo);
 
   function isStep1Valid() {
-    if (personalInfo.email.isInvalid || personalInfo.name.isInvalid || personalInfo.phone.isInvalid) return false;
+    if (personalInfo.email.isInvalid || personalInfo.name.isInvalid || personalInfo.phone.isInvalid)
+      return false;
 
     return true;
   }
@@ -33,12 +34,10 @@ export default function Buttons({ step, setStep }: Props) {
     switch (step) {
       case 1:
         if (isStep1Valid()) setStep((prev) => prev + 1);
-        return;
-      case 2:
-        setStep((prev) => prev + 1);
+        break;
 
       default:
-        return;
+        setStep((prev) => prev + 1);
     }
   }
 
@@ -48,13 +47,23 @@ export default function Buttons({ step, setStep }: Props) {
 
   return (
     <div className={`${styles["container"]}`}>
-      {step > 1 ? <Button styleMode="text" text="Go Back" btnAttributes={{ type: "button", onClick: goBack }} /> : null}
+      {step > 1 ? (
+        <Button styleMode="text" text="Go Back" btnAttributes={{ type: "button", onClick: goBack }} />
+      ) : null}
       <div className={`${styles["next-btn"]}`}>
-        <Button
-          styleMode="default"
-          text="Next Step"
-          btnAttributes={{ type: "button", disabled: isDisabled(), onClick: updateStep }}
-        />
+        {step === 4 ? (
+          <Button
+            styleMode="primary"
+            text="Confirm"
+            btnAttributes={{ type: "button", disabled: isDisabled(), onClick: updateStep }}
+          />
+        ) : (
+          <Button
+            styleMode="default"
+            text="Next Step"
+            btnAttributes={{ type: "button", disabled: isDisabled(), onClick: updateStep }}
+          />
+        )}
       </div>
     </div>
   );

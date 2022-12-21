@@ -1,0 +1,20 @@
+.header {
+  margin-block: 1.5rem;
+  height: 1px;
+  width: 100%;
+  background-color: hsl(var(--clr-neutral-200));
+}
+
+.item + .item {
+  margin-top: 1rem;
+}
+
+.title {
+  color: hsl(var(--clr-neutral-100));
+  font-size: 0.95rem;
+}
+
+.cost {
+  font-size: 0.95rem;
+  color: hsl(var(--clr-primary-100));
+}

@@ -5,6 +5,7 @@ import PickAddons from "./addons/PickAddons";
 import SelectPlan from "./plan/SelectPlan";
 import Steps from "./Steps";
 import styles from "./styles/Form.module.css";
+import Summary from "./summary/Summary";
 
 export default function Form() {
   const [step, setStep] = useState<number>(2);
@@ -17,6 +18,8 @@ export default function Form() {
         return <SelectPlan />;
       case 3:
         return <PickAddons />;
+      case 4:
+        return <Summary setStep={setStep} />;
 
       default:
         return null;
@@ -27,11 +30,13 @@ export default function Form() {
     <div className={`${styles["card"]}`}>
       <Steps step={step} setStep={setStep} />
       <div className={`${styles["content"]}`}>
-        <div className={`${styles["content-container"]}`}>
+        <form className={`${styles["content-container"]}`}>
           {renderContent()}
           <Buttons step={step} setStep={setStep} />
-        </div>
+        </form>
       </div>
     </div>
   );
 }
+
+// TODO: ADD SPECIFIC ERRORS ONLY ON FOCUS OUT

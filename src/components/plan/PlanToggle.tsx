@@ -4,9 +4,7 @@ import { useAppSelector } from "../../hooks/useAppSelector";
 import { actionForm } from "../../redux/form-slice";
 import styles from "./styles/PlanToggle.module.css";
 
-type Props = {};
-
-export default function PlanToggle({}: Props) {
+export default function PlanToggle() {
   const checkboxRef = useRef<HTMLInputElement>(null);
   const isMonthly = useAppSelector((state) => state.form.plan.isMonthly);
   const dispatch = useAppDispatch();

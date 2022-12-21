@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { TAddon, TPersonalInfoProperty, TPlan } from "../types";
-import { IAddon, IInput } from "../interface";
+import { IAddon, ICosts, IInput } from "../interface";
 
 interface IUpdatePersonalInfo {
   property: TPersonalInfoProperty;
@@ -18,37 +18,6 @@ interface IPersonalInfo {
   name: IInput;
   email: IInput;
   phone: IInput;
-}
-
-interface ICosts {
-  plan: {
-    arcade: {
-      month: number;
-      year: number;
-    };
-    advanced: {
-      month: number;
-      year: number;
-    };
-    pro: {
-      month: number;
-      year: number;
-    };
-  };
-  addon: {
-    onlineService: {
-      month: number;
-      year: number;
-    };
-    largerStorage: {
-      month: number;
-      year: number;
-    };
-    customProfile: {
-      month: number;
-      year: number;
-    };
-  };
 }
 
 interface IForm {
@@ -84,9 +53,18 @@ const initialState: IForm = {
     isMonthly: true,
   },
   addon: {
-    online: false,
-    profile: false,
-    storage: false,
+    online: {
+      isActive: false,
+      title: "Online service",
+    },
+    profile: {
+      isActive: false,
+      title: "Larger storage",
+    },
+    storage: {
+      isActive: false,
+      title: "Customizable Profile",
+    },
   },
   costs: {
     plan: {
@@ -104,15 +82,15 @@ const initialState: IForm = {
       },
     },
     addon: {
-      onlineService: {
+      online: {
         month: 1,
         year: 10,
       },
-      largerStorage: {
+      storage: {
         month: 2,
         year: 20,
       },
-      customProfile: {
+      profile: {
         month: 2,
         year: 20,
       },
@@ -137,7 +115,7 @@ export const formSlice = createSlice({
       state.plan.isMonthly = action.payload;
     },
     toggleAddon: (state, action: PayloadAction<IUpdateAddon>) => {
-      state.addon[action.payload.property] = !state.addon[action.payload.property];
+      state.addon[action.payload.property].isActive = !state.addon[action.payload.property].isActive;
     },
   },
 });

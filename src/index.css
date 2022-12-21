@@ -145,7 +145,7 @@ body {
   position: relative;
 }
 
-.form-flow > * + * {
+.flow > * + * {
   margin-top: 1.5rem;
 }
 
