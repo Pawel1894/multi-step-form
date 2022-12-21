@@ -20,10 +20,42 @@ interface IPersonalInfo {
   phone: IInput;
 }
 
+interface ICosts {
+  plan: {
+    arcade: {
+      month: number;
+      year: number;
+    };
+    advanced: {
+      month: number;
+      year: number;
+    };
+    pro: {
+      month: number;
+      year: number;
+    };
+  };
+  addon: {
+    onlineService: {
+      month: number;
+      year: number;
+    };
+    largerStorage: {
+      month: number;
+      year: number;
+    };
+    customProfile: {
+      month: number;
+      year: number;
+    };
+  };
+}
+
 interface IForm {
   personalInfo: IPersonalInfo;
   plan: TPlan;
   addon: IAddon;
+  costs: ICosts;
 }
 
 const initialState: IForm = {
@@ -55,6 +87,36 @@ const initialState: IForm = {
     online: false,
     profile: false,
     storage: false,
+  },
+  costs: {
+    plan: {
+      arcade: {
+        month: 9,
+        year: 90,
+      },
+      advanced: {
+        month: 12,
+        year: 120,
+      },
+      pro: {
+        month: 15,
+        year: 150,
+      },
+    },
+    addon: {
+      onlineService: {
+        month: 1,
+        year: 10,
+      },
+      largerStorage: {
+        month: 2,
+        year: 20,
+      },
+      customProfile: {
+        month: 2,
+        year: 20,
+      },
+    },
   },
 };
 

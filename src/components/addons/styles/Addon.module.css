@@ -34,7 +34,7 @@
   width: 25px;
 }
 
-input {
+.checkmark-container > input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -53,7 +53,7 @@ input {
   border-radius: 0.4rem;
 }
 
-input:checked ~ .checkmark {
+.checkmark-container > input:checked ~ .checkmark {
   background-color: hsl(var(--clr-primary-200));
   border-color: hsl(var(--clr-primary-200));
 }
@@ -71,6 +71,6 @@ input:checked ~ .checkmark {
   transform: rotate(45deg);
 }
 
-input:checked ~ .checkmark:after {
+.checkmark-container > input:checked ~ .checkmark:after {
   display: block;
 }

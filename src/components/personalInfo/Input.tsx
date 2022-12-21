@@ -1,12 +1,12 @@
 import React, { HTMLInputTypeAttribute } from "react";
-import { PersonalInfoProperty } from "../../types";
+import { TPersonalInfoProperty } from "../../types";
 import styles from "./styles/Input.module.css";
 import { useAppSelector } from "../../hooks/useAppSelector";
 
 type Props = {
   label: string;
   isRequired: boolean;
-  property: PersonalInfoProperty;
+  property: TPersonalInfoProperty;
   type: HTMLInputTypeAttribute;
   placeholder: string;
   onChangeHandler: (e: React.ChangeEvent<HTMLInputElement>) => void;

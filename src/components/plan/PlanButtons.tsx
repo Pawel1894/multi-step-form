@@ -9,6 +9,7 @@ import PlanBtn from "./PlanBtn";
 
 export default function PlanButtons() {
   const plan = useAppSelector((state) => state.form.plan);
+  const costs = useAppSelector((state) => state.form.costs.plan);
   const dispatch = useDispatch();
 
   return (
@@ -18,8 +19,8 @@ export default function PlanButtons() {
         isMonthly={plan.isMonthly}
         img={arcade}
         title="Arcade"
-        monthlyCost="$9/mo"
-        yearlyCost="$90/yr"
+        monthlyCost={costs.arcade.month}
+        yearlyCost={costs.arcade.year}
         discount="2 months free"
         onClickHandler={() => {
           dispatch(actionForm.setPlanCategory("arcade"));
@@ -30,8 +31,8 @@ export default function PlanButtons() {
         isMonthly={plan.isMonthly}
         img={advanced}
         title="Advanced"
-        monthlyCost="$12/mo"
-        yearlyCost="$120/yr"
+        monthlyCost={costs.advanced.month}
+        yearlyCost={costs.advanced.year}
         discount="2 months free"
         onClickHandler={() => {
           dispatch(actionForm.setPlanCategory("advanced"));
@@ -42,8 +43,8 @@ export default function PlanButtons() {
         isMonthly={plan.isMonthly}
         img={pro}
         title="Pro"
-        monthlyCost="$15/mo"
-        yearlyCost="$150/yr"
+        monthlyCost={costs.pro.month}
+        yearlyCost={costs.pro.year}
         discount="2 months free"
         onClickHandler={() => {
           dispatch(actionForm.setPlanCategory("pro"));

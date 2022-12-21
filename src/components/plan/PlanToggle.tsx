@@ -21,7 +21,7 @@ export default function PlanToggle({}: Props) {
     <div className={`${styles["container"]}`}>
       <label className={`${styles["label"]} ${isMonthly ? styles["active"] : null}`}>Monthly</label>
       <label className={`${styles["switch"]}`}>
-        <input ref={checkboxRef} type="checkbox" onChange={togglePlan} />
+        <input checked={!isMonthly} ref={checkboxRef} type="checkbox" onChange={togglePlan} />
         <span className={`${styles["slider"]}`}></span>
       </label>
       <label className={`${styles["label"]} ${!isMonthly ? styles["active"] : null}`}>Yearly</label>

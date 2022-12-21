@@ -1,3 +1,5 @@
+import { TCost } from "../types";
+
 export function containsNumbers(str: string) {
   return /\d/.test(str);
 }
@@ -12,4 +14,8 @@ export function isValidEmail(email: string) {
 
 export function isValidTel(str: string) {
   return (/^\+[0-9]*$/.test(str) && str.length === 11) || str.length === 12;
+}
+
+export function formatCost(cost: number, type: TCost) {
+  return `$${cost}/${type === "yearly" ? "yr" : "mo"}`;
 }

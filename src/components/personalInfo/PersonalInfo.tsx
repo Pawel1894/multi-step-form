@@ -1,13 +1,13 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { ERRORS } from "../../enums";
-import { PersonalInfoProperty } from "../../types";
 import { actionForm } from "../../redux/form-slice";
 import FormHeader from "../FormHeader";
 import Input from "./Input";
 import { containsNumbers, isValidEmail, isValidTel } from "../../helpers/helpers";
+import { TPersonalInfoProperty } from "../../types";
 
-function isPersonalInfoProperty(value: string): value is PersonalInfoProperty {
+function isPersonalInfoProperty(value: string): value is TPersonalInfoProperty {
   return ["name", "phone", "email"].includes(value);
 }
 
@@ -84,7 +84,7 @@ export default function PersonalInfo() {
     };
   }
 
-  function Validate(property: PersonalInfoProperty, value: string) {
+  function Validate(property: TPersonalInfoProperty, value: string) {
     switch (property) {
       case "name":
         return isNameInvalid(value);
@@ -118,7 +118,10 @@ export default function PersonalInfo() {
 
   return (
     <form className="form-flow margin-top-2">
-      <FormHeader title="Personal info" description="Please provide your name, email address, and phone number." />
+      <FormHeader
+        title="Personal info"
+        description="Please provide your name, email address, and phone number."
+      />
       <Input
         property={"name"}
         label="Name"

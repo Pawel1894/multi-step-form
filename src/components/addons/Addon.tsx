@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { formatCost } from "../../helpers/helpers";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { actionForm } from "../../redux/form-slice";
 import { TAddon } from "../../types";
@@ -10,9 +11,10 @@ type Props = {
   description: string;
   monthlyCost: number;
   yearlyCost: number;
+  isMonthly: boolean;
 };
 
-export default function Addon({ title, description, monthlyCost, yearlyCost, property }: Props) {
+export default function Addon({ title, description, monthlyCost, yearlyCost, property, isMonthly }: Props) {
   const checkboxRef = useRef<HTMLInputElement>(null);
   const dispatch = useAppDispatch();
   function toggleAddon() {
@@ -31,7 +33,11 @@ export default function Addon({ title, description, monthlyCost, yearlyCost, pro
         <span className={`${styles["title"]}`}>{title}</span>
         <span className={`${styles["description"]}`}>{description}</span>
       </div>
-      <div className={`${styles["cost"]} margin-left-auto`}>+${monthlyCost}/mo</div>
+      <div className={`${styles["cost"]} margin-left-auto`}>
+        +{isMonthly ? formatCost(monthlyCost, "monthly") : formatCost(yearlyCost, "yearly")}
+      </div>
     </label>
   );
 }
+
+// TODO: ADD OBJECT OF COSTS TO SLICE

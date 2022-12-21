@@ -6,3 +6,5 @@ export type TPlan = {
 };
 
 export type TAddon = "online" | "storage" | "profile";
+
+export type TCost = "monthly" | "yearly";
