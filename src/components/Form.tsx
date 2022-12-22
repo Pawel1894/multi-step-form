@@ -10,7 +10,7 @@ import ThankYou from "./ThankYou";
 import { useAppSelector } from "../hooks/useAppSelector";
 
 export default function Form() {
-  const [step, setStep] = useState<number>(2);
+  const [step, setStep] = useState<number>(1);
   const isSubmited = useAppSelector((state) => state.form.isSubmited);
 
   function renderContent() {
@@ -47,5 +47,3 @@ export default function Form() {
     </div>
   );
 }
-
-// TODO: ADD SPECIFIC ERRORS ONLY ON FOCUS OUT

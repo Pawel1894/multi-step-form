@@ -4,7 +4,7 @@ import { ERRORS } from "../../enums";
 import { actionForm } from "../../redux/form-slice";
 import FormHeader from "../FormHeader";
 import Input from "./Input";
-import { containsNumbers, isValidEmail, isValidTel } from "../../helpers/helpers";
+import { containsNumbers, isValidEmail } from "../../helpers/helpers";
 import { TPersonalInfoProperty } from "../../types";
 
 function isPersonalInfoProperty(value: string): value is TPersonalInfoProperty {
@@ -64,20 +64,6 @@ export default function PersonalInfo() {
       };
     }
 
-    if (!tel.startsWith("+")) {
-      return {
-        isInvalid: true,
-        errorMsg: ERRORS.START_TEL,
-      };
-    }
-
-    if (!isValidTel(tel.replaceAll(" ", ""))) {
-      return {
-        isInvalid: true,
-        errorMsg: ERRORS.INVALID_TEL,
-      };
-    }
-
     return {
       isInvalid: false,
       errorMsg: "",
@@ -129,6 +115,7 @@ export default function PersonalInfo() {
         type="text"
         placeholder="e.g. Stephen King"
         onChangeHandler={updateValue}
+        onBlurHandler={updateValue}
       />
       <Input
         property={"email"}
@@ -137,6 +124,7 @@ export default function PersonalInfo() {
         type="email"
         placeholder="e.g. stephenking@lorem.com"
         onChangeHandler={updateValue}
+        onBlurHandler={updateValue}
       />
       <Input
         property={"phone"}
@@ -145,6 +133,7 @@ export default function PersonalInfo() {
         type="tel"
         placeholder="e.g. +1 234 567 890"
         onChangeHandler={updateValue}
+        onBlurHandler={updateValue}
       />
     </div>
   );

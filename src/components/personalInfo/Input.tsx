@@ -9,13 +9,19 @@ type Props = {
   property: TPersonalInfoProperty;
   type: HTMLInputTypeAttribute;
   placeholder: string;
+  onBlurHandler: (e: React.FocusEvent<HTMLInputElement>) => void;
   onChangeHandler: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-export default function Input({ label, isRequired, property, onChangeHandler, placeholder }: Props) {
-  const { value, isInvalid, isChanged, errorMsg } = useAppSelector(
-    (state) => state.form.personalInfo[property]
-  );
+export default function Input({
+  label,
+  isRequired,
+  property,
+  onBlurHandler,
+  placeholder,
+  onChangeHandler,
+}: Props) {
+  const { isInvalid, errorMsg, isChanged } = useAppSelector((state) => state.form.personalInfo[property]);
 
   return (
     <div className="relative">
@@ -26,8 +32,10 @@ export default function Input({ label, isRequired, property, onChangeHandler, pl
         placeholder={placeholder}
         property={property}
         className={`${styles["input"]} ${isInvalid && isChanged ? styles["error"] : null}`}
-        onChange={onChangeHandler}
-        value={value}
+        onBlur={onBlurHandler}
+        onChange={(e) => {
+          if (isChanged && isInvalid) onChangeHandler(e);
+        }}
       />
       {isInvalid && isChanged ? <span className={`${styles["error-msg"]}`}>{errorMsg}</span> : null}
     </div>
