@@ -6,9 +6,12 @@ import SelectPlan from "./plan/SelectPlan";
 import Steps from "./Steps";
 import styles from "./styles/Form.module.css";
 import Summary from "./summary/Summary";
+import ThankYou from "./ThankYou";
+import { useAppSelector } from "../hooks/useAppSelector";
 
 export default function Form() {
   const [step, setStep] = useState<number>(2);
+  const isSubmited = useAppSelector((state) => state.form.isSubmited);
 
   function renderContent() {
     switch (step) {
@@ -31,8 +34,14 @@ export default function Form() {
       <Steps step={step} setStep={setStep} />
       <div className={`${styles["content"]}`}>
         <form className={`${styles["content-container"]}`}>
-          {renderContent()}
-          <Buttons step={step} setStep={setStep} />
+          {isSubmited ? (
+            <ThankYou />
+          ) : (
+            <>
+              {renderContent()}
+              <Buttons step={step} setStep={setStep} />
+            </>
+          )}
         </form>
       </div>
     </div>

@@ -1,5 +1,8 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../hooks/useAppDispatch";
 import { useAppSelector } from "../hooks/useAppSelector";
+import { submitForm } from "../redux/form-action";
 import Button from "./Button";
 import styles from "./styles/Buttons.module.css";
 
@@ -10,6 +13,7 @@ interface Props {
 
 export default function Buttons({ step, setStep }: Props) {
   const personalInfo = useAppSelector((state) => state.form.personalInfo);
+  const dispatch = useAppDispatch();
 
   function isStep1Valid() {
     if (personalInfo.email.isInvalid || personalInfo.name.isInvalid || personalInfo.phone.isInvalid)
@@ -55,7 +59,7 @@ export default function Buttons({ step, setStep }: Props) {
           <Button
             styleMode="primary"
             text="Confirm"
-            btnAttributes={{ type: "button", disabled: isDisabled(), onClick: updateStep }}
+            btnAttributes={{ type: "button", disabled: isDisabled(), onClick: () => dispatch(submitForm()) }}
           />
         ) : (
           <Button

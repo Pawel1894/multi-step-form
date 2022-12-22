@@ -1,7 +1,13 @@
 import { Dispatch } from "redux";
+import { actionForm } from "./form-slice";
+import { RootState } from "./store";
 
-export const fetchClient = (): any => {
-  return async (dispatch: Dispatch, getState: any) => {
-    var currentState = getState().clientDetails.tmpData;
+type TGetState = () => RootState;
+
+export const submitForm = () => {
+  return (dispatch: Dispatch, getState: TGetState) => {
+    dispatch(actionForm.setSubmit());
+    const formData = getState();
+    // REQUEST TO BACKEND
   };
 };

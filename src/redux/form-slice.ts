@@ -25,6 +25,7 @@ interface IForm {
   plan: TPlan;
   addon: IAddon;
   costs: ICosts;
+  isSubmited: boolean;
 }
 
 const initialState: IForm = {
@@ -96,6 +97,7 @@ const initialState: IForm = {
       },
     },
   },
+  isSubmited: false,
 };
 
 export const formSlice = createSlice({
@@ -116,6 +118,9 @@ export const formSlice = createSlice({
     },
     toggleAddon: (state, action: PayloadAction<IUpdateAddon>) => {
       state.addon[action.payload.property].isActive = !state.addon[action.payload.property].isActive;
+    },
+    setSubmit: (state) => {
+      state.isSubmited = true;
     },
   },
 });
