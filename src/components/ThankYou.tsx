@@ -2,7 +2,7 @@ import React from "react";
 import icon from "../assets/images/icon-thank-you.svg";
 import styles from "./styles/ThankYou.module.css";
 
-export default function ThankYou() {
+export default function Thankyou() {
   return (
     <div className="flex-center-center flex-dir-col text-center height-100 flow">
       <img src={icon} />

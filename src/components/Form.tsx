@@ -6,7 +6,7 @@ import SelectPlan from "./plan/SelectPlan";
 import Steps from "./Steps";
 import styles from "./styles/Form.module.css";
 import Summary from "./summary/Summary";
-import ThankYou from "./ThankYou";
+import Thankyou from "./Thankyou";
 import { useAppSelector } from "../hooks/useAppSelector";
 
 export default function Form() {
@@ -35,7 +35,7 @@ export default function Form() {
       <div className={`${styles["content"]}`}>
         <form className={`${styles["content-container"]}`}>
           {isSubmited ? (
-            <ThankYou />
+            <Thankyou />
           ) : (
             <>
               {renderContent()}
