@@ -51,15 +51,14 @@ export default function usePersonalInfo() {
   }
 
   function isTelInvalid(tel: string) {
-    if (!tel) {
+    const trimVal = tel.replaceAll(" ", "").replace("+", "");
+    console.log(trimVal);
+    if (!trimVal) {
       return {
         isInvalid: true,
         errorMsg: ERRORS.REQUIRED,
       };
     }
-
-    const trimVal = tel.replaceAll(" ", "").replace("+", "");
-    console.log(trimVal);
 
     if (!isNumbersOnly(trimVal) || trimVal.length < 9 || trimVal.length > 12) {
       return {
@@ -94,7 +93,8 @@ export default function usePersonalInfo() {
     const { isInvalid, errorMsg } = validate(property, value);
 
     dispatch(
-      actionForm.validatePersonalInfo({
+      actionForm.updatePersonalInfo({
+        value,
         property,
         isInvalid,
         errorMsg,
