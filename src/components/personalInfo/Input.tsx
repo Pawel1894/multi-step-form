@@ -21,7 +21,9 @@ export default function Input({
   placeholder,
   onChangeHandler,
 }: Props) {
-  const { isInvalid, errorMsg, isChanged } = useAppSelector((state) => state.form.personalInfo[property]);
+  const { isInvalid, errorMsg, isChanged, value } = useAppSelector(
+    (state) => state.form.personalInfo[property]
+  );
 
   return (
     <div className="relative">
@@ -33,6 +35,7 @@ export default function Input({
         property={property}
         className={`${styles["input"]} ${isInvalid && isChanged ? styles["error"] : null}`}
         onBlur={onBlurHandler}
+        defaultValue={value}
         onChange={(e) => {
           if (isChanged && isInvalid) onChangeHandler(e);
         }}
