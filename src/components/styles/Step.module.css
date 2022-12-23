@@ -25,12 +25,27 @@
 .step-number {
   color: hsla(var(--clr-neutral-200));
   font-size: 0.8rem;
-  font-weight: var(--fw-semi-bold);  
+  font-weight: var(--fw-semi-bold);
 }
 
 .label {
-  color: hsl(var(--clr-neutral-400));  
+  color: hsl(var(--clr-neutral-400));
   font-weight: var(--fw-bold);
-  text-transform: uppercase;  
+  text-transform: uppercase;
   line-height: 1.3;
+}
+
+@media (max-width: 48rem) {
+  .step {
+    height: max-content;
+    padding-inline: 0.25rem;
+  }
+
+  .step-number {
+    display: none;
+  }
+
+  .label {
+    display: none;
+  }
 }

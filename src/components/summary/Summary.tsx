@@ -9,7 +9,7 @@ interface Props {
 
 export default function Summary({ setStep }: Props) {
   return (
-    <div className="flow margin-top-2">
+    <div className="form-content flow margin-top-2">
       <FormHeader title="Finishing up" description="Double-check everything looks OK before confirming." />
       <Costs setStep={setStep} />
     </div>

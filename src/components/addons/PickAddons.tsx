@@ -7,7 +7,7 @@ export default function PickAddons() {
   const isMonthly = useAppSelector((state) => state.form.plan.isMonthly);
   const addons = useAppSelector((state) => state.form.addon);
   return (
-    <div className="flow margin-top-2">
+    <div className="form-content flow margin-top-2">
       <FormHeader title="Pick add-ons" description="Add-ons help enhance your gaming experience." />
       <Addon
         property="online"

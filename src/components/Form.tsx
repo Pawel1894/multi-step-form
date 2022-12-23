@@ -38,7 +38,7 @@ export default function Form() {
             <Thankyou />
           ) : (
             <>
-              {renderContent()}
+              <div className={`${styles["form"]}`}>{renderContent()}</div>
               <Buttons step={step} setStep={setStep} />
             </>
           )}

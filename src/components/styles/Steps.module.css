@@ -1,6 +1,9 @@
 .container {
   display: grid;
-  width: 30%;
+  height: 100%;
+  min-width: 274px;
+  border-radius: 1rem;
+  background: url("../../assets/images/bg-sidebar-desktop.svg") no-repeat center center/cover;
 }
 
 .container > * {
@@ -10,4 +13,18 @@
 
 .container > div:first-of-type {
   margin-top: 1rem;
+}
+
+@media (max-width: 48rem) {
+  .container {
+    background: url("../../assets/images/bg-sidebar-mobile.svg") no-repeat center center/cover;
+    width: 100%;
+    border-radius: 0;
+    min-height: 172px;
+  }
+
+  .container > div {
+    display: flex;
+    justify-content: center;
+  }
 }

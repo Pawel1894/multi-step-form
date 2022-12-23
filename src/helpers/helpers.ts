@@ -1,5 +1,5 @@
 import { IAddon, ICosts } from "../interface";
-import { TAddon, TCost, TPlan } from "../types";
+import { TAddon, TCost, TPersonalInfoProperty, TPlan } from "../types";
 
 export function containsNumbers(str: string) {
   return /\d/.test(str);
@@ -35,4 +35,8 @@ export function getSelectedAddonsCost(costs: ICosts, addons: IAddon, isMonthly: 
   }
 
   return totalCost;
+}
+
+export function isPersonalInfoProperty(value: string): value is TPersonalInfoProperty {
+  return ["name", "phone", "email"].includes(value);
 }

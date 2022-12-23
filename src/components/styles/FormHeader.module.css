@@ -10,3 +10,13 @@
   font-size: 1.2rem;
   color: hsl(var(--clr-neutral-100));
 }
+
+@media (max-width: 48rem) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+}

@@ -22,3 +22,29 @@
   width: 80%;
   margin-inline: auto;
 }
+
+@media (max-width: 48rem) {
+  .card {
+    border-radius: unset;
+    background-color: transparent;
+    box-shadow: none;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .content {
+    width: 100%;
+    height: 100%;
+    margin-top: -6rem;
+  }
+
+  .content-container {
+    width: 100%;
+    min-height: 91vh;
+  }
+
+  .form {
+    padding-inline: 0.5rem;
+    margin-bottom: 1rem;
+  }
+}

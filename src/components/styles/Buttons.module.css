@@ -9,3 +9,11 @@
   margin-left: auto;
   width: fit-content;
 }
+
+@media (max-width: 48rem) {
+  .container {
+    background-color: hsl(var(--clr-neutral-400));
+    margin-bottom: 0;
+    padding: 1rem;
+  }
+}

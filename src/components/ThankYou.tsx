@@ -4,7 +4,7 @@ import styles from "./styles/ThankYou.module.css";
 
 export default function Thankyou() {
   return (
-    <div className="flex-center-center flex-dir-col text-center height-100 flow">
+    <div className={`${styles["container"]} form-content flex-center-center flex-dir-col text-center flow`}>
       <img src={icon} />
       <span className={`${styles["title"]}`}>Thank you!</span>
       <p className={`${styles["desc"]}`}>

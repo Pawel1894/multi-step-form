@@ -3,9 +3,9 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import { TAddon, TPersonalInfoProperty, TPlan } from "../types";
 import { IAddon, ICosts, IInput } from "../interface";
 
-interface IUpdatePersonalInfo {
+interface IEditPersonalInfo {
   property: TPersonalInfoProperty;
-  value: string;
+  value?: string;
   isInvalid: boolean;
   errorMsg: string;
 }
@@ -104,8 +104,13 @@ export const formSlice = createSlice({
   name: "form",
   initialState,
   reducers: {
-    updatePersonalInfo: (state, action: PayloadAction<IUpdatePersonalInfo>) => {
-      state.personalInfo[action.payload.property].value = action.payload.value;
+    updatePersonalInfo: (state, action: PayloadAction<IEditPersonalInfo>) => {
+      if (action.payload.value) state.personalInfo[action.payload.property].value = action.payload.value;
+      state.personalInfo[action.payload.property].isInvalid = action.payload.isInvalid;
+      state.personalInfo[action.payload.property].errorMsg = action.payload.errorMsg;
+      state.personalInfo[action.payload.property].isChanged = true;
+    },
+    validatePersonalInfo: (state, action: PayloadAction<IEditPersonalInfo>) => {
       state.personalInfo[action.payload.property].isInvalid = action.payload.isInvalid;
       state.personalInfo[action.payload.property].errorMsg = action.payload.errorMsg;
       state.personalInfo[action.payload.property].isChanged = true;

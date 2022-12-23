@@ -5,7 +5,7 @@ import styles from "./styles/SelectedPlan.module.css";
 
 export default function SelectPlan() {
   return (
-    <div className="flow margin-top-2">
+    <div className="form-content flow margin-top-2">
       <FormHeader title="Select your plan" description="You have option of monthly or yearly billing." />
       <div className={`${styles["content"]}`}>
         <PlanButtons />
