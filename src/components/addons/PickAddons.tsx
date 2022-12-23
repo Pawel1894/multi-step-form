@@ -11,7 +11,7 @@ export default function PickAddons() {
       <FormHeader title="Pick add-ons" description="Add-ons help enhance your gaming experience." />
       <Addon
         property="online"
-        title="Online service"
+        title={addons.online.title}
         description="Access to multiplayer games"
         monthlyCost={1}
         yearlyCost={10}
@@ -20,7 +20,7 @@ export default function PickAddons() {
       />
       <Addon
         property="storage"
-        title="Larger storage"
+        title={addons.storage.title}
         description="Extra 1TB of cloud save"
         monthlyCost={2}
         yearlyCost={20}
@@ -29,7 +29,7 @@ export default function PickAddons() {
       />
       <Addon
         property="profile"
-        title="Customizable profile"
+        title={addons.profile.title}
         description="Custom theme on your profile"
         monthlyCost={2}
         yearlyCost={20}

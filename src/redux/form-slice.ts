@@ -64,7 +64,7 @@ const initialState: IForm = {
     },
     storage: {
       isActive: false,
-      title: "Customizable Profile",
+      title: "Customizable profile",
     },
   },
   costs: {
