@@ -1,6 +1,6 @@
 import React from "react";
 import { ERRORS } from "../enums";
-import { containsNumbers, isValidEmail } from "../helpers/helpers";
+import { containsNumbers, isNumbersOnly, isValidEmail } from "../helpers/helpers";
 import { actionForm } from "../redux/form-slice";
 import { TPersonalInfoProperty } from "../types";
 import { useAppDispatch } from "./useAppDispatch";
@@ -55,6 +55,16 @@ export default function usePersonalInfo() {
       return {
         isInvalid: true,
         errorMsg: ERRORS.REQUIRED,
+      };
+    }
+
+    const trimVal = tel.replaceAll(" ", "").replace("+", "");
+    console.log(trimVal);
+
+    if (!isNumbersOnly(trimVal) || trimVal.length < 9 || trimVal.length > 12) {
+      return {
+        isInvalid: true,
+        errorMsg: ERRORS.INVALID_TEL,
       };
     }
 

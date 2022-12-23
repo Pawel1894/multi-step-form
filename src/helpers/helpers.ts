@@ -17,6 +17,11 @@ export function formatCost(cost: number, type: TCost) {
   return `$${cost}/${type === "yearly" ? "yr" : "mo"}`;
 }
 
+export function isNumbersOnly(str: string) {
+  if (str.match(/^[0-9]+$/) != null) return true;
+  else return false;
+}
+
 export function getSelectedPlanCost(costs: ICosts, plan: TPlan) {
   if (plan.isMonthly) return costs.plan[plan.category].month;
 
