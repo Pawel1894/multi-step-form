@@ -2,7 +2,6 @@ import React from "react";
 import { actionForm } from "../../redux/form-slice";
 import FormHeader from "../FormHeader";
 import Input from "./Input";
-import { TPersonalInfoProperty } from "../../types";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import usePersonalInfo from "../../hooks/usePersonalInfo";
 import { isPersonalInfoProperty } from "../../helpers/helpers";

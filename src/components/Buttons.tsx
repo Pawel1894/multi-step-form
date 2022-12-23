@@ -1,11 +1,8 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import { useAppDispatch } from "../hooks/useAppDispatch";
 import { useAppSelector } from "../hooks/useAppSelector";
 import usePersonalInfo from "../hooks/usePersonalInfo";
 import { submitForm } from "../redux/form-action";
-import { actionForm } from "../redux/form-slice";
-import { TPersonalInfoProperty } from "../types";
 import Button from "./Button";
 import styles from "./styles/Buttons.module.css";
 
