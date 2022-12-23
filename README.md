@@ -26,7 +26,7 @@ My goal for creating this app was to practice my react and css skills.
  - [Vite](https://vitejs.dev/)
  - [React](https://reactjs.org/) 
  - [Redux Toolkit](https://redux-toolkit.js.org/) 
- - [TypeScript](https://www.typescriptlang.org/)]
+ - [TypeScript](https://www.typescriptlang.org/)
  
 
 ## Install process
